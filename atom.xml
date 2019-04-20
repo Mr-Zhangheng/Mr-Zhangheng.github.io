@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mr-zhangheng.github.io/"/>
-  <updated>2019-04-20T16:36:52.868Z</updated>
+  <updated>2019-04-20T17:57:58.901Z</updated>
   <id>https://mr-zhangheng.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub使用指南</title>
+    <link href="https://mr-zhangheng.github.io/2019/04/21/GitHub%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://mr-zhangheng.github.io/2019/04/21/GitHub使用指南/</id>
+    <published>2019-04-20T17:57:58.900Z</published>
+    <updated>2019-04-20T17:57:58.901Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;GitHub使用指南&quot;&gt;&lt;a href=&quot;#GitHub使用指南&quot; class=&quot;headerlink&quot; title=&quot;GitHub使用指南&quot;&gt;&lt;/a&gt;GitHub使用指南&lt;/h4&gt;&lt;h5 id=&quot;创建分支&quot;&gt;&lt;a href=&quot;#创建分支&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://mr-zhangheng.github.io/categories/Linux/"/>
+    
+    
+      <category term="GitHub" scheme="https://mr-zhangheng.github.io/tags/GitHub/"/>
+    
+      <category term="Git" scheme="https://mr-zhangheng.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>GitHub + Hexo 个人博客网站搭建</title>

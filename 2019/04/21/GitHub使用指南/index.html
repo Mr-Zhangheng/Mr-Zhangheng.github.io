@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="GitHub,Git,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mr-Zhangheng" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="GitHub使用指南创建分支 在分支上所做的更改不会影响master分支，因此可以自由地进行实验和提交更改，并且分支将不会合并，直到准备好与正在协作的人进行审核   master分支中的任何内容始终都是可部署的   在处理功能或修复时，创建新分支非常重要。您的分行名称应该是描述性的,例如make-retina-avatars , user-content-cache-key;    添加提交 无论">
+<meta name="keywords" content="GitHub,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub使用指南">
+<meta property="og:url" content="https://mr-zhangheng.github.io/2019/04/21/GitHub使用指南/index.html">
+<meta property="og:site_name" content="Mr-Zhangheng">
+<meta property="og:description" content="GitHub使用指南创建分支 在分支上所做的更改不会影响master分支，因此可以自由地进行实验和提交更改，并且分支将不会合并，直到准备好与正在协作的人进行审核   master分支中的任何内容始终都是可部署的   在处理功能或修复时，创建新分支非常重要。您的分行名称应该是描述性的,例如make-retina-avatars , user-content-cache-key;    添加提交 无论">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/branching.png">
+<meta property="og:updated_time" content="2019-04-20T17:57:58.901Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GitHub使用指南">
+<meta name="twitter:description" content="GitHub使用指南创建分支 在分支上所做的更改不会影响master分支，因此可以自由地进行实验和提交更改，并且分支将不会合并，直到准备好与正在协作的人进行审核   master分支中的任何内容始终都是可部署的   在处理功能或修复时，创建新分支非常重要。您的分行名称应该是描述性的,例如make-retina-avatars , user-content-cache-key;    添加提交 无论">
+<meta name="twitter:image" content="https://guides.github.com/activities/hello-world/branching.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '5JAAI464TJ',
+      apiKey: '622b8583536758f1d387b1c09aa013c8',
+      indexName: 'f6a749cacda5108774c52060676eceaf',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://mr-zhangheng.github.io/2019/04/21/GitHub使用指南/">
+
+
+
+
+
+  <title>GitHub使用指南 | Mr-Zhangheng</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6cb65e05dd157c03235a646ef42be2c2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mr-Zhangheng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">My Awesome Site</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mr-zhangheng.github.io/2019/04/21/GitHub使用指南/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang heng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr-Zhangheng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">GitHub使用指南</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T01:57:58+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/21/GitHub使用指南/" class="leancloud_visitors" data-flag-title="GitHub使用指南">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.6k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="GitHub使用指南"><a href="#GitHub使用指南" class="headerlink" title="GitHub使用指南"></a>GitHub使用指南</h4><h5 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h5><ol>
+<li>在分支上所做的更改不会影响master分支，因此可以自由地进行实验和提交更改，并且分支将不会合并，直到准备好与正在协作的人进行审核  </li>
+<li>master分支中的任何内容始终都是可部署的  </li>
+<li>在处理功能或修复时，创建新分支非常重要。您的分行名称应该是描述性的,例如<code>make-retina-avatars</code> , <code>user-content-cache-key</code>;  </li>
+</ol>
+<h5 id="添加提交"><a href="#添加提交" class="headerlink" title="添加提交"></a>添加提交</h5><ol>
+<li>无论何时添加，编辑或删除文件，都要进行提交，并将它们添加到分支。添加提交的过程会在处理功能分支时跟踪进度</li>
+<li>提交还可以创建一份透明的工作历史记录，其他人可以遵循这些历史记录来了解已完成的工作和原因</li>
+<li>每个提交都被视为一个单独的变更单位</li>
+<li>如果发现错误，或者决定朝不同方向前进，则可以回滚更改</li>
+<li>提交消息很重要，特别是因为Git会跟踪更改，然后在将它们推送到服务器后将其显示为提交。通过编写清晰的提交消息，可以更轻松地让其他人跟进并提供反馈</li>
+</ol>
+<h5 id="打开拉取请求"><a href="#打开拉取请求" class="headerlink" title="打开拉取请求"></a>打开拉取请求</h5><ol>
+<li>Pull Requests对于贡献开源项目和管理对共享存储库的更改很有用。</li>
+<li>如果使用的是Fork＆Pull模型，则Pull Requests提供了一种向项目维护人员通知希望他们考虑的更改的方法。</li>
+<li>如果使用的是共享存储库模型，则Pull Requests会在合并到主分支之前帮助启动代码审查和有关建议更改的对话。  </li>
+</ol>
+<h5 id="讨论并检查代码"><a href="#讨论并检查代码" class="headerlink" title="讨论并检查代码"></a>讨论并检查代码</h5><ol>
+<li>一旦拉开请求被打开，审核您的更改的人员或团队可能会有问题或意见</li>
+<li>GitHub将在统一的Pull Request视图中显示您的新提交以及您可能收到的任何其他反馈</li>
+<li>Pull Request注释是用Markdown编写的，因此可以嵌入图像和表情符号，使用预先格式化的文本块和其他轻量级格式  </li>
+</ol>
+<h5 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h5><ol>
+<li>使用GitHub，可以在合并到master之前从分支部署进行生产中的最终测试</li>
+<li>如果分支导致问题，可以通过将现有主数据库部署到生产中来回滚它  </li>
+</ol>
+<h5 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h5><ol>
+<li>将代码合并到主分支中,合并后，Pull Requests会保留代码历史更改的记录</li>
+<li>因为它们是可搜索的，所以任何人都可以及时回过头来理解为什么以及如何做出决定。</li>
+<li>通过将某些关键字合并到Pull请求的文本中，可以将问题与代码相关联。合并Pull请求后，相关问题也将关闭。例如，输入短语<code>Closes #32</code>将关闭存储库中的第32个问题。  </li>
+</ol>
+<h4 id="GitHub实践–项目提交"><a href="#GitHub实践–项目提交" class="headerlink" title="GitHub实践–项目提交"></a>GitHub实践–项目提交</h4><h5 id="创建和使用存储库"><a href="#创建和使用存储库" class="headerlink" title="创建和使用存储库"></a>创建和使用存储库</h5><h6 id="GitHub简介"><a href="#GitHub简介" class="headerlink" title="GitHub简介"></a>GitHub简介</h6><ol>
+<li>GitHub是用于版本控制和协作的代码托管平台;在任何地方与任何人协同工作;存储库/分支/提交/Pull请求  </li>
+</ol>
+<h6 id="创建存储库"><a href="#创建存储库" class="headerlink" title="创建存储库"></a>创建存储库</h6><ol>
+<li>一个库通常用于举办单个项目</li>
+<li>存储库可以包含文件夹和文件，图像，视频，电子表格和数据集 - 项目需要的任何内容</li>
+<li>建议包括README或包含项目信息的文件  </li>
+</ol>
+<h6 id="创建新存储库"><a href="#创建新存储库" class="headerlink" title="创建新存储库"></a>创建新存储库</h6><ol>
+<li>在右上角，在头像或identicon旁边，单击 <strong>+</strong> 然后选择New repository</li>
+<li>命名存储库</li>
+<li>写一个简短的描述</li>
+<li>选择<strong>使用自述文件初始化此存储库</strong></li>
+<li>单击<strong>创建存储库</strong>  </li>
+</ol>
+<h5 id="启动和管理新分支"><a href="#启动和管理新分支" class="headerlink" title="启动和管理新分支"></a>启动和管理新分支</h5><h6 id="创建一个分支"><a href="#创建一个分支" class="headerlink" title="创建一个分支"></a>创建一个分支</h6><ol>
+<li>分支是一次在不同版本的存储库上工作的方式</li>
+<li>默认情况下，存储库有一个名为branch的分支master，它被认为是权威分支。使用分支进行实验并在提交之前进行编辑master</li>
+<li>当在分支机构上创建分支时master，正在创建该master时间点的副本或快照。如果其他人master在分支机构工作时对分支进行了更改，则可以引入这些更新。</li>
+<li><img src="https://guides.github.com/activities/hello-world/branching.png" alt></li>
+<li>在GitHub，开发人员，编写人员和设计人员使用分支来保持错误修复和功能工作与master（生产）分支分开。当更改准备就绪时，  </li>
+</ol>
+<h6 id="创建一个新分支"><a href="#创建一个新分支" class="headerlink" title="创建一个新分支"></a>创建一个新分支</h6><ol>
+<li>转到存储库</li>
+<li>单击文件列表顶部的下拉列表：master：master</li>
+<li>在新分支文本框中键入分支名称</li>
+<li>选择蓝色的创建分支框或按键盘上的“Enter”</li>
+<li>现在有两个分支，master和readme-edits。它们看起来完全一样，接下来，将更改添加到新分支。  </li>
+</ol>
+<h5 id="对文件进行更改并将其作为提交推送到GitHub"><a href="#对文件进行更改并将其作为提交推送到GitHub" class="headerlink" title="对文件进行更改并将其作为提交推送到GitHub"></a>对文件进行更改并将其作为提交推送到GitHub</h5><h6 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h6><ol>
+<li>在GitHub上，保存的更改称为提交</li>
+<li>每个提交都有一个关联的提交消息，这是一个解释为什么进行特定更改的描述</li>
+<li>提交消息可捕获更改的历史记录，因此其他贡献者可以了解您已完成的操作和原因  </li>
+</ol>
+<h6 id="制作并提交更改"><a href="#制作并提交更改" class="headerlink" title="制作并提交更改"></a>制作并提交更改</h6><ol>
+<li>单击新分支下的该README.md文件</li>
+<li>点击要编辑的文件视图右上角的铅笔图标</li>
+<li>在编辑器中，写下该分支的简介信息</li>
+<li>编写描述更改的提交消息</li>
+<li>单击<strong>提交更改</strong>按钮</li>
+<li>这些更改将只对新分支上的README文件进行，因此现在此分支包含的内容与之不同master  </li>
+</ol>
+<h5 id="打开并合并拉取请求"><a href="#打开并合并拉取请求" class="headerlink" title="打开并合并拉取请求"></a>打开并合并拉取请求</h5><h6 id="打开Pull请求"><a href="#打开Pull请求" class="headerlink" title="打开Pull请求"></a>打开Pull请求</h6><ol>
+<li>Pull Requests是GitHub上合作的核心。当打开拉取请求时，提出了更改并请求某人审核并提取自己的贡献并将其合并到他们的分支中</li>
+<li>Pull Requests显示来自两个分支的内容的差异或差异。更改，添加和减少以绿色和红色显示</li>
+<li>提交后，即使在代码完成之前，您也可以打开拉取请求并开始讨论</li>
+<li>可以在自己的存储库中打开pull请求并自行合并;在开展大型项目之前，这是学习GitHub流程的好方法  </li>
+</ol>
+<h6 id="打开Pull-Request以更改README"><a href="#打开Pull-Request以更改README" class="headerlink" title="打开Pull Request以更改README"></a>打开Pull Request以更改README</h6><h4 id="Git手册"><a href="#Git手册" class="headerlink" title="Git手册"></a>Git手册</h4><h5 id="版本控制系统"><a href="#版本控制系统" class="headerlink" title="版本控制系统"></a>版本控制系统</h5><ol>
+<li>版本控制系统或VCS会跟踪人员和团队一起协作项目时的更改历史记录。</li>
+<li>随着项目的发展，团队可以运行测试，修复错误并提供新代码，并确信任何版本都可以随时恢复。</li>
+<li>开发人员可以查看项目历史记录以找出  <ul>
+<li>做了哪些更改</li>
+<li>是谁做出了改变</li>
+<li>什么时候做出改变</li>
+<li>为什么需要更改  </li>
+</ul>
+</li>
+</ol>
+<h5 id="分布式版本控制系统"><a href="#分布式版本控制系统" class="headerlink" title="分布式版本控制系统"></a>分布式版本控制系统</h5><ol>
+<li>Git是分布式版本控制系统（DVCS）;</li>
+<li>DVCS允许完全访问项目的每个文件，分支和迭代，并允许每个用户访问所有更改的完整且自包含的历史记录  </li>
+</ol>
+<h5 id="关于Git"><a href="#关于Git" class="headerlink" title="关于Git"></a>关于Git</h5><ol>
+<li>Git允许开发人员在一个地方查看他们的变更，决策和任何项目进展的整个时间表  </li>
+</ol>
+<h5 id="关于存储库"><a href="#关于存储库" class="headerlink" title="关于存储库"></a>关于存储库</h5><ol>
+<li>一个仓库，或Git项目，包括与项目相关的文件和文件夹的整个集合，每个文件的修订历史记录一起。</li>
+<li>文件历史记录显示为称为提交的快照，并且提交作为链接列表关系存在，并且可以组织成称为分支的多个开发行。</li>
+<li>由于Git是DVCS，因此存储库是自包含单元，拥有存储库副本的任何人都可以访问整个代码库及其历史记录。</li>
+<li>使用命令行或其他易用的接口，git存储库还允许：与历史记录，克隆，创建分支，提交，合并，比较代码版本之间的更改等进行交互  </li>
+</ol>
+<h5 id="基本Git命令"><a href="#基本Git命令" class="headerlink" title="基本Git命令"></a>基本Git命令</h5><ol>
+<li>基本命令:git init;git clone;git add;git commit;git status;git branch;git merge;git pull;git push</li>
+<li>详细命令参考:<a href="https://git-scm.com/docs" target="_blank" rel="noopener">https://git-scm.com/docs</a> </li>
+<li>Git简要命令:<a href="https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Basic-Snapshotting" target="_blank" rel="noopener">https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Basic-Snapshotting</a>   </li>
+</ol>
+<h5 id="Github帮助"><a href="#Github帮助" class="headerlink" title="Github帮助:"></a>Github帮助:</h5><p><a href="https://help.github.com/en/articles/git-and-github-learning-resources" target="_blank" rel="noopener">https://help.github.com/en/articles/git-and-github-learning-resources</a>  </p>
+<h5 id="协作开发方式"><a href="#协作开发方式" class="headerlink" title="协作开发方式"></a>协作开发方式</h5><h6 id="共享存储库"><a href="#共享存储库" class="headerlink" title="共享存储库"></a>共享存储库</h6><ol>
+<li>使用共享存储库，个人和团队被明确指定为具有读取，写入或管理员访问权限的贡献者  </li>
+</ol>
+<h6 id="fork和pull"><a href="#fork和pull" class="headerlink" title="fork和pull"></a>fork和pull</h6><ol>
+<li>fork and pull模型允许任何可以查看项目的人做出贡献。</li>
+<li>fork是开发人员个人帐户下项目的副本。</li>
+<li>每个开发人员都可以完全控制他们的分支，并可以自由地实现修复或新功能。</li>
+<li>在fork中完成的工作要么保持独立，要么通过拉动请求浮现回原始项目。在那里，维护人员可以在合并之前查看建议的更改  </li>
+</ol>
+<h4 id="Fork"><a href="#Fork" class="headerlink" title="Fork"></a>Fork</h4><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><ol>
+<li>fork:使用GitHub一段时间后，自己想要为其他人的项目做出贡献。或者，希望将某人的项目作为自己的起点。</li>
+<li>创建“fork”正在生成其他人项目的个人副本</li>
+<li>Forks充当原始存储库和自己的个人副本之间的桥梁。可以提交Pull请求，通过提供原始项目的更改来帮助改善其他人的项目。</li>
+<li>fork是GitHub社交编码的核心  </li>
+</ol>
+<h5 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h5><ol>
+<li>点击fork</li>
+<li>clone/download</li>
+<li>暂存并提交更改</li>
+<li>make a Puull Request</li>
+<li>转到项目所在存储库,单击Compare and Pull Request,输入标题和可选说明–提供尽可能多的信息</li>
+<li>点击发送Pull Request 即可  </li>
+</ol>
+<h4 id="DOI"><a href="#DOI" class="headerlink" title="DOI"></a>DOI</h4><h4 id="MarkDownPad2"><a href="#MarkDownPad2" class="headerlink" title="MarkDownPad2"></a>MarkDownPad2</h4><p><a href="https://help.github.com/en/categories/writing-on-github" target="_blank" rel="noopener">https://help.github.com/en/categories/writing-on-github</a>  </p>
+<h4 id="通过Git上传文件夹至GitHub"><a href="#通过Git上传文件夹至GitHub" class="headerlink" title="通过Git上传文件夹至GitHub"></a>通过Git上传文件夹至GitHub</h4><h5 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h5><blockquote>
+<p>参考文章(有错误) <a href="https://www.cnblogs.com/xiaosongbiog/p/7003601.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaosongbiog/p/7003601.html</a>  </p>
+</blockquote>
+<ol>
+<li>绑定用户:打开git-bash.exe  <ul>
+<li>因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识</li>
+<li>用户和邮箱为你github注册的账号和邮箱</li>
+<li>git config –global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定的不同的用户名和邮箱</li>
+<li><strong>命令</strong>:  <ul>
+<li><code>git config --global user.name &quot;Mr-Zhangheng&quot;</code></li>
+<li><code>git config --global user.email &quot;1393640672@qq.com&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>为GitHub账户设置SSH key  <ul>
+<li>原理:   <ul>
+<li>ssh key是加密传输</li>
+<li>git使用rsa，rsa要解决的一个核心问题是，如何使用一对特定的数字，使其中一个数字可以用来加密，而另外一个数字可以用来解密</li>
+<li>这两个数字就是在使用git和github的时候所遇到的public key也就是公钥以及private key私钥</li>
+<li>公钥就是那个用来加密的数字，这也就是为什么你在本机生成了公钥之后，要上传到github的原因。从github发回来的，用那公钥加密过的数据，可以用你本地的私钥来还原</li>
+</ul>
+</li>
+<li>生成ssh key:  <ul>
+<li>首先检查是否已生成密钥 <code>cd ~/.ssh</code>，ls如果有3个文件，则密钥已经生成，id_rsa.pub就是公钥</li>
+<li>如果没有生成，那么通过<code>$ ssh-keygen -t rsa -C “1393640672@qq.com”</code>来生成。  <ul>
+<li>1 是路径确认，直接按回车存默认路径即可</li>
+<li>2 直接回车键，这里我们不使用密码进行登录, 用密码太麻烦</li>
+<li>3 直接回车键</li>
+</ul>
+</li>
+<li>生成成功后，去对应目录用记事本打开id_rsa.pub，得到ssh key公钥  –对应目录C:\Users**.ssh里（**为电脑用户名，每个人不同）  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>为GitHub账户配置ssh key  <ul>
+<li>切换到github，展开个人头像的小三角，点击settings  </li>
+<li>打开SSH keys菜单， 点击Add SSH key新增密钥，填上标题，跟仓库保持一致吧，好区分</li>
+<li>接着将id_rsa.pub文件中key粘贴到此，最后Add key生成密钥  </li>
+<li>github账号的SSH keys配置完成  </li>
+</ul>
+</li>
+</ol>
+<h5 id="上传本地项目到github"><a href="#上传本地项目到github" class="headerlink" title="上传本地项目到github"></a>上传本地项目到github</h5><ol>
+<li>在你要上传工程的顶级目录（工程目录）下右键，git bash here  <ul>
+<li><strong>命令:</strong> <code>git init</code>  <ul>
+<li>初始化成功后会发现项目里多了一个隐藏文件夹.git</li>
+<li>这个目录是Git用来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>将所有文件添加到仓库  <ul>
+<li><strong>命令:</strong>    <code>git add .</code>  </li>
+</ul>
+</li>
+<li>把文件提交到仓库，双引号内是提交注释  <ul>
+<li><strong>命令:</strong> <code>git commit -m &quot;提交信息简介&quot;</code>  </li>
+<li>如此本地仓库建立好了  </li>
+</ul>
+</li>
+<li>关联github仓库  <ul>
+<li>到github的相应仓库复制仓库ssh地址  </li>
+<li><strong>执行命令:</strong> <code>git remote add origin git@github.com:Mr-Zhangheng/Java.git</code> –注意<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:Mr-Zhangheng/Java.git是仓库ssh地址  </li>
+</ul>
+</li>
+<li>代码合并  <ul>
+<li><strong>命令:</strong><code>git pull --rebase origin master</code> –注:pull = fetch + merge</li>
+</ul>
+</li>
+<li>上传本地代码  <ul>
+<li><strong>执行指令:</strong> <code>git push -u origin master</code>  </li>
+<li>上传成功</li>
+<li>git是不能管理空的文件夹的，文件夹里必须有文件才能上传  </li>
+</ul>
+</li>
+</ol>
+<h4 id="删除GitHub中的某个文件或者文件夹"><a href="#删除GitHub中的某个文件或者文件夹" class="headerlink" title="删除GitHub中的某个文件或者文件夹"></a>删除GitHub中的某个文件或者文件夹</h4><blockquote>
+<p>在Github上我们只能删除仓库，并不能删除文件或者文件夹，所以只能用命令来解决  </p>
+</blockquote>
+<h5 id="本地仓库和远程仓库同时删除"><a href="#本地仓库和远程仓库同时删除" class="headerlink" title="本地仓库和远程仓库同时删除"></a>本地仓库和远程仓库同时删除</h5><h5 id="只删除远程仓库-不删除本地仓库"><a href="#只删除远程仓库-不删除本地仓库" class="headerlink" title="只删除远程仓库,不删除本地仓库"></a>只删除远程仓库,不删除本地仓库</h5><blockquote>
+<p>远程仓库即GitHub仓库,本地仓库即Git仓库<br><code>git rm file_path</code>;<code>git commit -m &quot;delete_info&quot;</code>;<code>git push</code>;删除暂存区或者分支上的文件,同时工作区也不再需要这个文件<br><code>git rm --cached file_path</code>;<code>git commit -m &quot;delete remote somefile&quot;</code>;<code>git push</code>;需要删除暂存区或分支上的文件,但本地依然需要使用,只是不希望这个文件被版本控制  </p>
+</blockquote>
+<ol>
+<li>先用git打开本地要操作的仓库，然后把远程仓库拉到本地;<code>git pull origin master</code><br> <a href="https://img-blog.csdn.net/20180806200300939?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pc2hpd29kZWJvY2FpMjE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" target="_blank" rel="noopener">https://img-blog.csdn.net/20180806200300939?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pc2hpd29kZWJvY2FpMjE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70</a>  </li>
+<li>使用<code>dir /ls -a</code>查看远程仓库包含的文件，文件夹。（可以不操作）   </li>
+<li><code>git rm -r --cached filename</code>  选择删除你要删除的文件或者文件夹–注: -r参数是循环删除,一般是用来删除目录(文件夹)</li>
+<li><code>git commit -m &quot;具体删除日志信息&quot;</code> 交操作信息日志，方便以后查看  </li>
+<li><code>git push origin master</code> 把修改后的内容push到远程仓库完成删除操作;操作结束   </li>
+<li>git回滚图 <a href="https://images2017.cnblogs.com/blog/425762/201708/425762-20170812194454960-1674213106.png" target="_blank" rel="noopener">https://images2017.cnblogs.com/blog/425762/201708/425762-20170812194454960-1674213106.png</a>  </li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Zhang heng 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Zhang heng 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Zhang heng
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://mr-zhangheng.github.io/2019/04/21/GitHub使用指南/" title="GitHub使用指南">https://mr-zhangheng.github.io/2019/04/21/GitHub使用指南/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+          
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/20/GitHub-Hexo-个人博客网站搭建/" rel="next" title="GitHub + Hexo 个人博客网站搭建">
+                <i class="fa fa-chevron-left"></i> GitHub + Hexo 个人博客网站搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="Zhang heng">
+            
+              <p class="site-author-name" itemprop="name">Zhang heng</p>
+              <p class="site-description motion-element" itemprop="description">I will grow into a big tree and wait for your praise</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Mr-Zhangheng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jiao-yang-si-wo-18-55" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1393640672@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/11236047/mr-zhangheng" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#GitHub使用指南"><span class="nav-number">1.</span> <span class="nav-text">GitHub使用指南</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建分支"><span class="nav-number">1.1.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加提交"><span class="nav-number">1.2.</span> <span class="nav-text">添加提交</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#打开拉取请求"><span class="nav-number">1.3.</span> <span class="nav-text">打开拉取请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#讨论并检查代码"><span class="nav-number">1.4.</span> <span class="nav-text">讨论并检查代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#部署"><span class="nav-number">1.5.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#合并"><span class="nav-number">1.6.</span> <span class="nav-text">合并</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GitHub实践–项目提交"><span class="nav-number">2.</span> <span class="nav-text">GitHub实践–项目提交</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建和使用存储库"><span class="nav-number">2.1.</span> <span class="nav-text">创建和使用存储库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#GitHub简介"><span class="nav-number">2.1.1.</span> <span class="nav-text">GitHub简介</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建存储库"><span class="nav-number">2.1.2.</span> <span class="nav-text">创建存储库</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建新存储库"><span class="nav-number">2.1.3.</span> <span class="nav-text">创建新存储库</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动和管理新分支"><span class="nav-number">2.2.</span> <span class="nav-text">启动和管理新分支</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#创建一个分支"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建一个分支</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建一个新分支"><span class="nav-number">2.2.2.</span> <span class="nav-text">创建一个新分支</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对文件进行更改并将其作为提交推送到GitHub"><span class="nav-number">2.3.</span> <span class="nav-text">对文件进行更改并将其作为提交推送到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#概括"><span class="nav-number">2.3.1.</span> <span class="nav-text">概括</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#制作并提交更改"><span class="nav-number">2.3.2.</span> <span class="nav-text">制作并提交更改</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#打开并合并拉取请求"><span class="nav-number">2.4.</span> <span class="nav-text">打开并合并拉取请求</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#打开Pull请求"><span class="nav-number">2.4.1.</span> <span class="nav-text">打开Pull请求</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#打开Pull-Request以更改README"><span class="nav-number">2.4.2.</span> <span class="nav-text">打开Pull Request以更改README</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git手册"><span class="nav-number">3.</span> <span class="nav-text">Git手册</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#版本控制系统"><span class="nav-number">3.1.</span> <span class="nav-text">版本控制系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分布式版本控制系统"><span class="nav-number">3.2.</span> <span class="nav-text">分布式版本控制系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关于Git"><span class="nav-number">3.3.</span> <span class="nav-text">关于Git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关于存储库"><span class="nav-number">3.4.</span> <span class="nav-text">关于存储库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基本Git命令"><span class="nav-number">3.5.</span> <span class="nav-text">基本Git命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Github帮助"><span class="nav-number">3.6.</span> <span class="nav-text">Github帮助:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#协作开发方式"><span class="nav-number">3.7.</span> <span class="nav-text">协作开发方式</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#共享存储库"><span class="nav-number">3.7.1.</span> <span class="nav-text">共享存储库</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#fork和pull"><span class="nav-number">3.7.2.</span> <span class="nav-text">fork和pull</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fork"><span class="nav-number">4.</span> <span class="nav-text">Fork</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#简介"><span class="nav-number">4.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤"><span class="nav-number">4.2.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOI"><span class="nav-number">5.</span> <span class="nav-text">DOI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MarkDownPad2"><span class="nav-number">6.</span> <span class="nav-text">MarkDownPad2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过Git上传文件夹至GitHub"><span class="nav-number">7.</span> <span class="nav-text">通过Git上传文件夹至GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本设置"><span class="nav-number">7.1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上传本地项目到github"><span class="nav-number">7.2.</span> <span class="nav-text">上传本地项目到github</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除GitHub中的某个文件或者文件夹"><span class="nav-number">8.</span> <span class="nav-text">删除GitHub中的某个文件或者文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#本地仓库和远程仓库同时删除"><span class="nav-number">8.1.</span> <span class="nav-text">本地仓库和远程仓库同时删除</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#只删除远程仓库-不删除本地仓库"><span class="nav-number">8.2.</span> <span class="nav-text">只删除远程仓库,不删除本地仓库</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang heng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">5.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("DsljQWOpGOck0Cd6CP844liF-gzGzoHsz", "Fv65u7i9dT7TVKVVy1qpFjrK");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
