@@ -1959,7 +1959,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffebeb;
+  background: #79a6ed;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3405,7 +3405,7 @@ body {
 }
 .content {
   border-radius: 20px;
-  padding: 10px 60px 30px 60px;
+  padding: 0px 30px 30px 30px;
 /* background:rgba(255, 255, 255, 0.5) none repeat scroll !important; */
 /* opacity: 0.95;  */
 }

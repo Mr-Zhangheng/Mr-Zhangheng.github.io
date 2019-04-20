@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Mr-Zhangheng">
 <meta property="og:description" content="创建仓库 仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法     安装Git 安装Node.js :Hexo基于Node.js   安装Node.js会包含环境变量及npm的安装 安装后，检测Node.js是否安装成功，在命令行中输入 node -v   检测npm是否安装成功，在命令行中输入npm -v         安装Hexo 在本地新建">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-20T12:15:25.992Z">
+<meta property="og:updated_time" content="2019-04-20T16:36:52.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub + Hexo 个人博客网站搭建">
 <meta name="twitter:description" content="创建仓库 仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法     安装Git 安装Node.js :Hexo基于Node.js   安装Node.js会包含环境变量及npm的安装 安装后，检测Node.js是否安装成功，在命令行中输入 node -v   检测npm是否安装成功，在命令行中输入npm -v         安装Hexo 在本地新建">
@@ -100,7 +100,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -543,7 +543,7 @@
 <li>显示站点文章总字数</li>
 <li>文章末尾添加版权说明</li>
 <li>修改文章底部的#号标签</li>
-<li>添加jiathis分享</li>
+<li>添加needmoreshare2分享</li>
 </ul>
 <h5 id="集成常用的第三方服务"><a href="#集成常用的第三方服务" class="headerlink" title="集成常用的第三方服务"></a>集成常用的第三方服务</h5><ol>
 <li>百度统计:  <ul>
@@ -664,6 +664,21 @@
 
       
       
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
       
 
       
@@ -696,32 +711,6 @@
 
 
     <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
-
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript">
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
-<!-- JiaThis Button END -->
       
     </div>
   </div>
@@ -920,7 +909,7 @@ var jiathis_config={
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -1206,6 +1195,31 @@ var jiathis_config={
   
 
   
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
   
 
   
