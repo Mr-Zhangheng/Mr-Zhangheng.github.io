@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="创建仓库 仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法     安装Git 安装Node.js :Hexo基于Node.js   安装Node.js会包含环境变量及npm的安装 安装后，检测Node.js是否安装成功，在命令行中输入 node -v    检测npm是否安装成功，在命令行中输入npm -v         安装Hexo 在本地新">
+<meta name="description" content="创建仓库 仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法     安装Git 安装Node.js :Hexo基于Node.js   安装Node.js会包含环境变量及npm的安装 安装后，检测Node.js是否安装成功，在命令行中输入 node -v   检测npm是否安装成功，在命令行中输入npm -v         安装Hexo 在本地新建">
 <meta name="keywords" content="GitHub,hexo,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub + Hexo 个人博客网站搭建">
 <meta property="og:url" content="https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-个人博客网站搭建/index.html">
 <meta property="og:site_name" content="Mr-Zhangheng">
-<meta property="og:description" content="创建仓库 仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法     安装Git 安装Node.js :Hexo基于Node.js   安装Node.js会包含环境变量及npm的安装 安装后，检测Node.js是否安装成功，在命令行中输入 node -v    检测npm是否安装成功，在命令行中输入npm -v         安装Hexo 在本地新">
+<meta property="og:description" content="创建仓库 仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法     安装Git 安装Node.js :Hexo基于Node.js   安装Node.js会包含环境变量及npm的安装 安装后，检测Node.js是否安装成功，在命令行中输入 node -v   检测npm是否安装成功，在命令行中输入npm -v         安装Hexo 在本地新建">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-19T16:47:29.276Z">
+<meta property="og:updated_time" content="2019-04-20T12:15:25.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub + Hexo 个人博客网站搭建">
-<meta name="twitter:description" content="创建仓库 仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法     安装Git 安装Node.js :Hexo基于Node.js   安装Node.js会包含环境变量及npm的安装 安装后，检测Node.js是否安装成功，在命令行中输入 node -v    检测npm是否安装成功，在命令行中输入npm -v         安装Hexo 在本地新">
+<meta name="twitter:description" content="创建仓库 仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法     安装Git 安装Node.js :Hexo基于Node.js   安装Node.js会包含环境变量及npm的安装 安装后，检测Node.js是否安装成功，在命令行中输入 node -v   检测npm是否安装成功，在命令行中输入npm -v         安装Hexo 在本地新建">
 
 
 
@@ -342,7 +342,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-20T00:38:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-20T20:08:24+08:00">
                 2019-04-20
               </time>
             
@@ -397,6 +397,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -418,7 +437,7 @@
 <li>安装Git</li>
 <li>安装Node.js :Hexo基于Node.js  <ul>
 <li>安装Node.js会包含环境变量及npm的安装<ul>
-<li>安装后，检测Node.js是否安装成功，在命令行中输入 node -v   </li>
+<li>安装后，检测Node.js是否安装成功，在命令行中输入 <code>node -v</code>  </li>
 <li>检测npm是否安装成功，在命令行中输入npm -v   </li>
 </ul>
 </li>
@@ -427,7 +446,7 @@
 </ol>
 <h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h5><ol>
 <li>在本地新建文件夹,Hexo框架和以后自己发布的网页都会在这个文件夹中.右击文件夹打开Git Bash  </li>
-<li>输入命令<code>npm install -`</code>g hexo-cli`  </li>
+<li>输入命令<code>npm install -g   hexo-cli</code>  </li>
 <li>输入命令<code>hexo -v</code>验证是否安装成功  </li>
 <li>初始化文件 <code>hexo init blog</code>  –站点被初始化在了blog文件中…  </li>
 </ol>
@@ -451,9 +470,11 @@
 <h5 id="更换为NexT主题"><a href="#更换为NexT主题" class="headerlink" title="更换为NexT主题"></a>更换为NexT主题</h5><ol>
 <li>在blog路径下,把默认主题更改为Next主题:   <ul>
 <li>命令<code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code>  </li>
-<li>这是将Next主题下载到blog目录的themes主题下的next文件夹中    </li>
+<li>这是将Next主题下载到blog目录的themes主题下的next文件夹中   </li>
 </ul>
 </li>
+</ol>
+<ol start="2">
 <li>打开 站点配置文件， 找到 theme 字段，并将其值更改为 next  </li>
 <li>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是 <code>hexo s --debug</code>  </li>
 <li>Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可  </li>
@@ -465,7 +486,10 @@
 <li>编辑 主题配置文件，修改菜单项:    <ul>
 <li>默认菜单项有6个:Home,archives,categories,tags,about,commonweal–后面四个需要手动创建这个页面  </li>
 <li>设置菜单项的显示文本:翻译文本放置在 NexT 主题目录下的 languages/{language}.yml （{language} 为你所使用的语言)          </li>
+<li><ul>
 <li>以简体中文为例，若你需要添加一个菜单项，比如 something。那么就需要修改简体中文对应的翻译文件 languages/zh-Hans.yml，在 menu 字段下添加一项 :something: 有料  </li>
+</ul>
+</li>
 <li>设定菜单项的图标，对应的字段是 menu_icons,可以设置成 false 来去掉图标  </li>
 </ul>
 </li>
@@ -499,13 +523,13 @@
 <li>comments可以设置为false，含义是打开分类页面，评论插件不显示；如要显示则改为true  </li>
 </ul>
 </li>
-<li>设置具体文章的categories:当要为某一篇文章添加分类，只需在blog/source/_post目录下的具体文章的categories中添加标签即可: categories: 搭建博客,在日期的下一行添加即可,注意空格  </li>
+<li>设置具体文章的categories:当要为某一篇文章添加分类，只需在blog/source/_post目录下的具体文章的categories中添加标签即可: categories: 搭建博客,在日期的下一行添加即可,注意空格</li>
 </ol>
 <h5 id="添加about"><a href="#添加about" class="headerlink" title="添加about"></a>添加about</h5><ol>
 <li><code>hexo new page &quot;about&quot;</code></li>
 <li>其余步骤同tags和categories </li>
 </ol>
-<h5 id="其他主题设置"><a href="#其他主题设置" class="headerlink" title="其他主题设置"></a>其他主题设置</h5><p><strong>参考官网文档:<a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/theme-settings.html</a></strong><br><strong>参考博文:</strong><br><a href="https://blog.csdn.net/u011475210/article/details/79023429" target="_blank" rel="noopener">https://blog.csdn.net/u011475210/article/details/79023429</a><br><a href="https://www.cnblogs.com/php-linux/p/8416116.html" target="_blank" rel="noopener">https://www.cnblogs.com/php-linux/p/8416116.html</a><br><a href="https://www.cnblogs.com/php-linux/p/8416116.html" target="_blank" rel="noopener">https://www.cnblogs.com/php-linux/p/8416116.html</a><br><a href="https://blog.csdn.net/u012443858/article/details/60812982" target="_blank" rel="noopener">https://blog.csdn.net/u012443858/article/details/60812982</a><br><a href="https://www.jianshu.com/p/35e197cb1273" target="_blank" rel="noopener">https://www.jianshu.com/p/35e197cb1273</a></p>
+<h5 id="其他主题设置"><a href="#其他主题设置" class="headerlink" title="其他主题设置"></a>其他主题设置</h5><p><strong>参考官网文档:<a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/theme-settings.html</a></strong><br><strong>参考博文:</strong><br><a href="https://blog.csdn.net/u011475210/article/details/79023429" target="_blank" rel="noopener">https://blog.csdn.net/u011475210/article/details/79023429</a><br><a href="https://www.cnblogs.com/php-linux/p/8416116.html" target="_blank" rel="noopener">https://www.cnblogs.com/php-linux/p/8416116.html</a><br><a href="https://www.cnblogs.com/php-linux/p/8416116.html" target="_blank" rel="noopener">https://www.cnblogs.com/php-linux/p/8416116.html</a><br><a href="https://blog.csdn.net/u012443858/article/details/60812982" target="_blank" rel="noopener">https://blog.csdn.net/u012443858/article/details/60812982</a><br><a href="https://www.jianshu.com/p/35e197cb1273" target="_blank" rel="noopener">https://www.jianshu.com/p/35e197cb1273</a><br><a href="https://zhuanlan.zhihu.com/p/33616481" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33616481</a></p>
 <p>包括:  </p>
 <ul>
 <li>设置RSS  </li>
@@ -514,6 +538,12 @@
 <li>侧边栏社交链接</li>
 <li>开启打赏功能</li>
 <li>搜索服务:algolia</li>
+<li>设置博文内链接为蓝色</li>
+<li>显示每篇文章字数</li>
+<li>显示站点文章总字数</li>
+<li>文章末尾添加版权说明</li>
+<li>修改文章底部的#号标签</li>
+<li>添加jiathis分享</li>
 </ul>
 <h5 id="集成常用的第三方服务"><a href="#集成常用的第三方服务" class="headerlink" title="集成常用的第三方服务"></a>集成常用的第三方服务</h5><ol>
 <li>百度统计:  <ul>
@@ -523,12 +553,11 @@
 <li>该功能已成功加入，大约过20min后在百度统计上可以看到站点的访问情况  </li>
 </ul>
 </li>
-<li><p>阅读量统计:</p>
+<li>阅读量统计:</li>
+</ol>
 <ul>
 <li>LeanCloud</li>
 </ul>
-</li>
-</ol>
 <h5 id="其他个性化设计"><a href="#其他个性化设计" class="headerlink" title="其他个性化设计"></a>其他个性化设计</h5><ol>
 <li>给页面添加背景图片  <blockquote>
 <p>在theme/next/source/css/_custom文件夹下打开custom.styl文件，往里面添加代码  </p>
@@ -544,6 +573,7 @@
 <li>npm update hexo -g  #升级  </li>
 <li>hexo init  #初始化博客</li>
 <li>命令简写:   <ul>
+<li>hexo algolia   #更新搜索服务–更新文章之后</li>
 <li>hexo n “my blog” == hexo new “my blog”  #新建文章  </li>
 <li>hexo g == hexo generate  #生成  </li>
 <li>hexo s == hexo server  #启动服务预览  </li>
@@ -554,7 +584,7 @@
 <li>hexo server -s #静态模式</li>
 <li>hexo server -p 5000 #更改端口</li>
 <li>hexo server -i 192.168.1.1 #自定义 IP</li>
-<li>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令   </li>
+<li>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令     </li>
 </ol>
 <h5 id="详细参考资料"><a href="#详细参考资料" class="headerlink" title="详细参考资料:"></a>详细参考资料:</h5><blockquote>
 <p>  <a href="https://blog.csdn.net/u011475210/article/details/79023429" target="_blank" rel="noopener">https://blog.csdn.net/u011475210/article/details/79023429</a>  ## NexT文档:<br> <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a>    ## Hexo指令文档:<br><a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/commands.html</a>  </p>
@@ -600,16 +630,34 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Zhang heng
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-个人博客网站搭建/" title="GitHub + Hexo 个人博客网站搭建">https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-个人博客网站搭建/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
-            <a href="/tags/Git/" rel="tag"># Git</a>
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           
         </div>
       
@@ -648,6 +696,32 @@
 
 
     <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
       
     </div>
   </div>
@@ -757,6 +831,24 @@
                         <i class="fa fa-fw fa-globe"></i>GitHub</a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jiao-yang-si-wo-18-55" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1393640672@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/11236047/mr-zhangheng" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
             </div>
           
 
@@ -807,6 +899,15 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Zhang heng</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">1.8k</span>
   
 </div>
 

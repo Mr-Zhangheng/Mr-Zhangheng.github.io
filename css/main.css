@@ -1268,6 +1268,14 @@ pre .javascript .function {
 .use-motion .collection-title {
   opacity: 0;
 }
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #0477ab;
+  text-decoration: underline;
+}
 .posts-expand {
   padding-top: 40px;
 }
@@ -1763,6 +1771,13 @@ pre .javascript .function {
     transform: rotateZ(-30deg);
   }
 }
+.post-copyright {
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid #ff1700;
+  background-color: #f9f9f9;
+  list-style: none;
+}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -1944,7 +1959,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cff778;
+  background: #ffebeb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3385,10 +3400,12 @@ body {
 /* 让背景图基于容器大小伸缩 */
   background-size: cover;
 /* 设置背景颜色，背景图加载过程中会显示背景色 */
-  background-color: rgba(0,0,0,0.5);
+/* background-color: rgba(0, 0, 0, 0.5); */
+  opacity: 0.8;
 }
 .content {
   border-radius: 20px;
-  padding: 30px 60px 30px 60px;
-  background: rgba(255,255,255,0.5) none repeat scroll !important;
+  padding: 10px 60px 30px 60px;
+/* background:rgba(255, 255, 255, 0.5) none repeat scroll !important; */
+/* opacity: 0.95;  */
 }
