@@ -5,9 +5,9 @@
   <subtitle>My Awesome Site</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2019-04-19T16:38:26.884Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://mr-zhangheng.github.io/"/>
+  <updated>2019-04-19T16:47:29.276Z</updated>
+  <id>https://mr-zhangheng.github.io/</id>
   
   <author>
     <name>Zhang heng</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>GitHub + Hexo 个人博客网站搭建</title>
-    <link href="http://yoursite.com/2019/04/20/GitHub-Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2019/04/20/GitHub-Hexo-个人博客网站搭建/</id>
+    <link href="https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    <id>https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-个人博客网站搭建/</id>
     <published>2019-04-19T16:38:26.882Z</published>
-    <updated>2019-04-19T16:38:26.884Z</updated>
+    <updated>2019-04-19T16:47:29.276Z</updated>
     
     <summary type="html">
     
@@ -36,13 +36,21 @@
     
     </summary>
     
+      <category term="搭建博客" scheme="https://mr-zhangheng.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="GitHub" scheme="https://mr-zhangheng.github.io/tags/GitHub/"/>
+    
+      <category term="hexo" scheme="https://mr-zhangheng.github.io/tags/hexo/"/>
+    
+      <category term="Git" scheme="https://mr-zhangheng.github.io/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/03/21/hello-world/"/>
-    <id>http://yoursite.com/2019/03/21/hello-world/</id>
+    <link href="https://mr-zhangheng.github.io/2019/03/21/hello-world/"/>
+    <id>https://mr-zhangheng.github.io/2019/03/21/hello-world/</id>
     <published>2019-03-21T07:52:42.484Z</published>
     <updated>2019-03-21T07:52:42.484Z</updated>
     
