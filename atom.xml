@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mr-zhangheng.github.io/"/>
-  <updated>2019-04-21T02:37:43.236Z</updated>
+  <updated>2019-04-21T03:11:10.839Z</updated>
   <id>https://mr-zhangheng.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大数据生态圈</title>
+    <link href="https://mr-zhangheng.github.io/2019/04/21/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%94%9F%E6%80%81%E5%9C%88/"/>
+    <id>https://mr-zhangheng.github.io/2019/04/21/大数据生态圈/</id>
+    <published>2019-04-21T03:11:10.838Z</published>
+    <updated>2019-04-21T03:11:10.839Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;存储&quot;&gt;&lt;a href=&quot;#存储&quot; class=&quot;headerlink&quot; title=&quot;存储&quot;&gt;&lt;/a&gt;存储&lt;/h4&gt;&lt;p&gt;主要包括hdfs、Kafka&lt;/p&gt;
+&lt;h4 id=&quot;计算&quot;&gt;&lt;a href=&quot;#计算&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="大数据" scheme="https://mr-zhangheng.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://mr-zhangheng.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>Git的基本使用</title>
@@ -77,7 +104,7 @@
     <link href="https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     <id>https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-个人博客网站搭建/</id>
     <published>2019-04-20T12:08:24.063Z</published>
-    <updated>2019-04-21T02:05:47.163Z</updated>
+    <updated>2019-04-21T02:43:55.242Z</updated>
     
     <summary type="html">
     
