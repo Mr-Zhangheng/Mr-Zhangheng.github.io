@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mr-zhangheng.github.io/"/>
-  <updated>2019-04-20T17:57:58.901Z</updated>
+  <updated>2019-04-21T01:38:04.482Z</updated>
   <id>https://mr-zhangheng.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git的基本使用</title>
+    <link href="https://mr-zhangheng.github.io/2019/04/21/Git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
+    <id>https://mr-zhangheng.github.io/2019/04/21/Git的基本使用/</id>
+    <published>2019-04-21T01:38:04.481Z</published>
+    <updated>2019-04-21T01:38:04.482Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Git的基本使用&quot;&gt;&lt;a href=&quot;#Git的基本使用&quot; class=&quot;headerlink&quot; title=&quot;Git的基本使用&quot;&gt;&lt;/a&gt;Git的基本使用&lt;/h3&gt;&lt;h4 id=&quot;Git的初始化&quot;&gt;&lt;a href=&quot;#Git的初始化&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://mr-zhangheng.github.io/categories/Linux/"/>
+    
+    
+      <category term="GitHub" scheme="https://mr-zhangheng.github.io/tags/GitHub/"/>
+    
+      <category term="Git" scheme="https://mr-zhangheng.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>GitHub使用指南</title>
@@ -49,7 +77,7 @@
     <link href="https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     <id>https://mr-zhangheng.github.io/2019/04/20/GitHub-Hexo-个人博客网站搭建/</id>
     <published>2019-04-20T12:08:24.063Z</published>
-    <updated>2019-04-20T16:36:52.868Z</updated>
+    <updated>2019-04-21T02:05:47.163Z</updated>
     
     <summary type="html">
     
@@ -69,9 +97,9 @@
     
       <category term="GitHub" scheme="https://mr-zhangheng.github.io/tags/GitHub/"/>
     
-      <category term="hexo" scheme="https://mr-zhangheng.github.io/tags/hexo/"/>
-    
       <category term="Git" scheme="https://mr-zhangheng.github.io/tags/Git/"/>
+    
+      <category term="hexo" scheme="https://mr-zhangheng.github.io/tags/hexo/"/>
     
   </entry>
   
