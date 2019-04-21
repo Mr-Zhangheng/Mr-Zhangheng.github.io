@@ -1995,7 +1995,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #13ffcd;
+  background: #26ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3334,7 +3334,7 @@ body {
 }
 .content {
   border-radius: 20px;
-  padding: 20px 50px 25px 50px;
+  padding: 20px 50px 15px 50px;
 /* background:rgba(255, 255, 255, 0.5) none repeat scroll !important; */
   opacity: 0.95;
 }
